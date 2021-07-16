@@ -1,7 +1,5 @@
 import React from 'react'
-import Mensagem from './mensagem'
 import QuadroMensagem from './quadroMensagens'
-
 
 export default class Container extends React.Component {
 
@@ -9,10 +7,8 @@ export default class Container extends React.Component {
         inputUsuario: '',
         inputMensagem: '',
 
-        mensagens: [{
-           
-        }
-
+        mensagens: [
+            
         ]
     }
 
@@ -30,24 +26,24 @@ export default class Container extends React.Component {
 
         novaListaMensagens.push(novaMensagem)
 
-        this.setState({mensagens: novaListaMensagens})
+        this.setState({ mensagens: novaListaMensagens })
 
-        this.setState({inputUsuario: "", inputMensagem: ""})
+        this.setState({ inputUsuario: "", inputMensagem: "" })
 
     }
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <div className='quadroMensagens'>
-                    
-                    <QuadroMensagem Mensagens = {this.state.mensagens}/>
+
+                    <QuadroMensagem Mensagens={this.state.mensagens} />
 
                 </div>
                 <div className='inputMensagens'>
-                    <label></label>
+                    {/* <label></label> */}
                     <input value={this.state.inputUsuario} type='text' name='Usuário' placeholder='Usuário' onChange={this.onChangeUsuario} />
-                    <label></label>
+                    {/* <label></label> */}
                     <input value={this.state.inputMensagem} type='text' name='Mensagem' placeholder='Mensagem' onChange={this.onChangeMensagem} />
                     <button onClick={this.enviarMensagem}>Enviar</button>
                 </div>
