@@ -7,7 +7,7 @@ export default class QuadroMensagem extends React.Component {
 
         const arrayMsg = this.props.Mensagens
 
-        return <div>
+        return <div className="quadroMensagens">
             {
             
             arrayMsg.map((texto, index) => {
